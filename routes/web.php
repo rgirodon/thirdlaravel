@@ -26,3 +26,15 @@ Route::get('/date', function () {
 Route::get('article/{n}', function($n) {
     return view('article')->with('numero', $n);
 });
+
+Route::get('array/{n}', function($n) {
+    
+    $array = [];
+    
+    for ($i = 1; $i <= $n; $i++) {
+        
+        array_push($array, $i);
+    }
+    
+    return view('array')->with('array', $array);
+});

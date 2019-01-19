@@ -5,6 +5,6 @@
         <title>Les articles</title>
     </head>
         <body>
-        <p>C'est l'article n° <?php echo $numero ?></p>
+        <p>C'est l'article n° {{ $numero }}</p>
     </body>
 </html>
