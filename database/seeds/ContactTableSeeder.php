@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class ContactTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -10,6 +10,7 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run() {
-        $this->call(ContactTableSeeder::class);
+
+        factory(App\Contact::class, 10)->create();
     }
 }
