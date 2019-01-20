@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\NewsLetterSubscription;
 
 class NewsLetterController extends Controller {
 
@@ -20,7 +21,11 @@ class NewsLetterController extends Controller {
         
         $mail = $request->input('mail');
         
-        DB::insert('insert into newsletter_subscription (mail) values (:mail)', ['mail' => $mail]);
+        $newsLetterSubscription = new NewsLetterSubscription();
+        
+        $newsLetterSubscription->mail = $mail;
+        
+        $newsLetterSubscription->save();
         
         return view('newsletter_subscribed')->with('mail', $mail);
     }
