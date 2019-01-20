@@ -28,3 +28,7 @@ Route::get('array', 'ArrayController@show');
 Route::get('newsletter', 'NewsLetterController@display');
 
 Route::post('newsletter', 'NewsLetterController@subscribe')->name('newsletter_subscribe');
+
+Route::get('/users', 'UserController@list');
+
+Route::get('/user', 'UserController@show');
