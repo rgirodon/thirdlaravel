@@ -25,4 +25,8 @@ Route::get('article/{n}', function($n) {
     return view('article')->with('numero', $n);
 });
 
-Route::get('array/{n}', 'ArrayController@show');
+Route::get('array', 'ArrayController@show');
+
+Route::get('newsletter', 'NewsLetterController@display');
+
+Route::post('newsletter', 'NewsLetterController@subscribe')->name('newsletter_subscribe');

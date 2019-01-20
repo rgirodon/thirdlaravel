@@ -6,11 +6,13 @@ use Illuminate\Http\Request;
 
 class ArrayController extends Controller {
     
-    function show($n) {
+    function show(Request $request) {
+        
+        $nb = $request->query('nb');
         
         $array = [];
         
-        for ($i = 1; $i <= $n; $i++) {
+        for ($i = 1; $i <= $nb; $i++) {
             
             array_push($array, $i);
         }
