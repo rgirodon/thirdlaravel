@@ -78,8 +78,12 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
+            	<div class="title m-b-md">
                     Laravel
+                </div>
+            
+                <div class="m-b-md">
+                    {{ $message }}
                 </div>
 
                 <div class="links">

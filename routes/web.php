@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@index');
 
 Route::get('/hello', function () {
     return 'Hello World';
@@ -27,14 +25,4 @@ Route::get('article/{n}', function($n) {
     return view('article')->with('numero', $n);
 });
 
-Route::get('array/{n}', function($n) {
-    
-    $array = [];
-    
-    for ($i = 1; $i <= $n; $i++) {
-        
-        array_push($array, $i);
-    }
-    
-    return view('array')->with('array', $array);
-});
+Route::get('array/{n}', 'ArrayController@show');
