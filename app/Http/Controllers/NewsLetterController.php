@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\NewsLetterSubscription;
-use App\Managers\NewsLetterSubscriptionManager;
+use App\Facades\NewsLetter;
 
 class NewsLetterController extends Controller {
 
@@ -14,7 +13,7 @@ class NewsLetterController extends Controller {
         return view('newsletter');
     }
     
-    public function subscribe(Request $request, NewsLetterSubscriptionManager $newsLetterSubscriptionManager) {
+    public function subscribe(Request $request) {
                        
         $this->validate($request, [
             'mail' => 'bail|required|email'
@@ -26,7 +25,7 @@ class NewsLetterController extends Controller {
         
         $newsLetterSubscription->mail = $mail;
         
-        $newsLetterSubscriptionManager->save($newsLetterSubscription);
+        NewsLetter::save($newsLetterSubscription);
         
         return view('newsletter_subscribed')->with('mail', $mail);
     }
