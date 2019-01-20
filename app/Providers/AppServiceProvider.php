@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Managers\NewsLetterSubscriptionManager;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(
+            'App\Manager\NewsLetterSubscriptionManager',
+            function($app) {
+                return new NewsLetterSubscriptionManager();
+            });
     }
 }
