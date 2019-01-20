@@ -17,9 +17,7 @@ Route::get('/hello', function () {
     return 'Hello World';
 });
 
-Route::get('/date', function () {
-    return view('date');
-});
+Route::get('/date', 'DateController@show');
 
 Route::get('article/{n}', function($n) {
     return view('article')->with('numero', $n);

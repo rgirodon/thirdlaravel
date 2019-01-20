@@ -10,6 +10,17 @@
 
 @section('content')
 
-	Right now it is : {{ date('d/m/Y H:i:s') }}
+	<div class="alert alert-success">Right now it is : {{ $now }}</div>
+	
+	<div>
+		You already asked the date these times :
+		<ul>
+			@foreach ($past as $pastItem)
+			
+			<li>{{ $pastItem }}</li>
+			
+			@endforeach
+		</ul>
+	</div>
 
 @endsection
