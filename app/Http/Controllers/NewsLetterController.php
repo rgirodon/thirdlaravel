@@ -12,6 +12,10 @@ class NewsLetterController extends Controller {
     }
     
     public function subscribe(Request $request) {
+                       
+        $this->validate($request, [
+            'mail' => 'bail|required|email'
+        ]);
         
         $mail = $request->input('mail');
         
