@@ -10,6 +10,8 @@ class User extends Model {
     
     public $timestamps = false;
     
+    protected $fillable = ['firstname', 'lastname', 'password'];
+    
     public function contacts() {
         
         return $this->hasMany(Contact::class);

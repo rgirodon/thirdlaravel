@@ -10,7 +10,7 @@ $(document).ready(
 					
 					let number = $('#number').val();
 					
-					$.get( "array/" + number, function( data ) {
+					$.get( "api/array/" + number, function( data ) {
 						
 						for (let i = 0; i < data.numbers.length; i++) {
 							
