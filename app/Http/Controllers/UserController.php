@@ -14,9 +14,7 @@ class UserController extends Controller {
         return view('users')->with('users', $users);
     }
     
-    public function show(Request $request) {
-        
-        $id = $request->query('id');
+    public function show($id) {
         
         $user = DB::table('user')->where('id', $id)->first();
         
