@@ -25,6 +25,8 @@ Route::get('article/{n}', function($n) {
 
 Route::get('array', 'ArrayController@show');
 
+Route::get('array/{n}', 'ArrayController@buildJson');
+
 Route::get('newsletter', 'NewsLetterController@display');
 
 Route::post('newsletter', 'NewsLetterController@subscribe')->name('newsletter_subscribe');

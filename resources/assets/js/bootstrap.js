@@ -9,9 +9,14 @@ window._ = require('lodash');
 
 try {
     window.$ = window.jQuery = require('jquery');
-
+    
     require('bootstrap-sass');
-} catch (e) {}
+    
+    require('jquery-ui/ui/widgets/dialog');
+} 
+catch (e) {
+	
+}
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

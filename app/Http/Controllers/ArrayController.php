@@ -6,17 +6,20 @@ use Illuminate\Http\Request;
 
 class ArrayController extends Controller {
     
-    function show(Request $request) {
+    function show() {
         
-        $nb = $request->query('nb');
+        return view('array');
+    }
+    
+    function buildJson($n) {
         
         $array = [];
         
-        for ($i = 1; $i <= $nb; $i++) {
+        for ($i = 1; $i <= $n; $i++) {
             
             array_push($array, $i);
         }
         
-        return view('array')->with('array', $array);
+        return response()->json(['numbers' => $array]);
     }
 }
