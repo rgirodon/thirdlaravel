@@ -19,6 +19,22 @@ Route::get('/hello', function () {
     return 'Hello World';
 });
 
+Route::get('/number/{n}', function($n) {
+    
+    $result = '';
+    
+    if ($n%2 == 0) {
+        
+        $result = 'Pair !';
+    }
+    else {
+        
+        $result = 'Impair !';
+    }
+    
+    return $result;
+});
+
 Route::get('/date', function () {
     return view('date');
 });
