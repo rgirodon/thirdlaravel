@@ -15,7 +15,7 @@ class NewsLetterController extends Controller {
     public function subscribe(Request $request) {
                        
         $this->validate($request, [
-            'mail' => 'bail|required|email'
+            'mail' => 'bail|required|email|unique:newsletter_subscription,mail'
         ]);
         
         $mail = $request->input('mail');
