@@ -36,3 +36,8 @@ Route::get('/users', 'UserController@list');
 Route::get('/contacts', 'ContactController@list');
 
 Route::get('/users/{id}', 'UserController@show');
+
+Route::get('/firstvue', function() {
+    return view('firstvue');    
+});
+
