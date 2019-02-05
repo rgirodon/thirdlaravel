@@ -32,3 +32,5 @@ Route::post('newsletter', 'NewsLetterController@subscribe')->name('newsletter_su
 Route::get('/users', 'UserController@list');
 
 Route::get('/user', 'UserController@show');
+
+Route::get('/schools', 'SchoolController@list');
