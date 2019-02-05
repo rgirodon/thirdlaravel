@@ -9,7 +9,7 @@ class Contact extends Model {
     
     public $timestamps = false;
     
-    public function user() {
+    public function owner() {
         
         return $this->belongsTo(User::class);
     }

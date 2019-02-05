@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Users')
+@section('title', 'Contact')
 
 @section('header')
 	
@@ -35,7 +35,7 @@
                   <td>{{ $contact->lastname }}</td>
                   <td>{{ $contact->email }}</td>
                   <td>{{ $contact->phone }}</td>
-                  <td>{{ $contact->user->getFullName() }}</td>
+                  <td>{{ $contact->owner->getFullName() }}</td>
                 </tr>
                 
                 @endforeach

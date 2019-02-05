@@ -20,9 +20,9 @@ class CreateContactTable extends Migration
             $table->string('email');
             $table->string('phone');
             $table->text('description');
-            $table->integer('user_id');
+            $table->integer('owner_id');
             
-            $table->foreign('user_id')->references('id')->on('user');
+            $table->foreign('owner_id')->references('id')->on('user');
         });
     }
 
