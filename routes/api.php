@@ -20,3 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('array/{n}', 'ArrayController@buildJson');
 
 Route::resource('users', 'ApiUserController', ['except' => ['create', 'edit']]);
+
+Route::get('newsletterSubscriptions', 'ApiNewsLetterController@list');
+
+Route::get('newsletterSubscriptions/{id}', 'ApiNewsLetterController@show');
