@@ -6,8 +6,6 @@
 	
 	<h1>Please enter a number ?</h1>
 	
-	
-
 @endsection
 
 @section('content')

@@ -15,7 +15,7 @@ class ArrayController extends Controller {
         
         $array = [];
         
-        for ($i = 1; $i <= $n; $i++) {
+        for ($i = 0; $i <= $n; $i++) {
             
             array_push($array, $i);
         }

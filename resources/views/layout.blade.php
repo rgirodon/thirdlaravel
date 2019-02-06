@@ -3,6 +3,7 @@
     <head>
         <title>App Name - @yield('title')</title>
         <link rel="stylesheet" href="{{ asset('css/app.css') }}"></link>        
+        <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
     </head>
     <body>
     	<header>
@@ -10,9 +11,7 @@
         </header>
 
         <div>
-            @yield('content')
+            @yield('content')                       
         </div>
-        
-        <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
