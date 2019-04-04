@@ -112,34 +112,24 @@ export default new Vuex.Store({
   
 	  addItemAction: function(context, payload) {
           
-		  return new Promise((resolve) => {
-        
-			  axios
-				  .post('/thirdlaravel/thirdlaravel/public/api/shoppingListItems', {
-			            type: payload.item.type,
-			            item: payload.item.item
-		          })
-		          .then(response => {
-					
-		        	  context.commit('addItem', payload);
-				  			
-				  	  resolve();
-          	  });
-		  });
+		  axios
+		  .post('/thirdlaravel/thirdlaravel/public/api/shoppingListItems', {
+	            type: payload.item.type,
+	            item: payload.item.item
+          })
+          .then(response => {
+			
+        	  context.commit('addItem', payload);
+          });
       },
 	  
 	  removeItemAction: function(context, payload) {
 	      		  
-		  return new Promise((resolve) => {
-			  
-			  axios.delete('/thirdlaravel/thirdlaravel/public/api/shoppingListItems/' + payload.item.id)
-			  		.then(response => {
-				
-			  			context.commit('removeItem', payload);
-			  			
-			  			resolve();
-			  		});
-  		  });
+		  axios.delete('/thirdlaravel/thirdlaravel/public/api/shoppingListItems/' + payload.item.id)
+		  		.then(response => {
+			
+		  			context.commit('removeItem', payload);			  			
+		  		});
 	  }
   }
 });

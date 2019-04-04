@@ -53729,30 +53729,20 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 
 		addItemAction: function addItemAction(context, payload) {
 
-			return new Promise(function (resolve) {
+			axios.post('/thirdlaravel/thirdlaravel/public/api/shoppingListItems', {
+				type: payload.item.type,
+				item: payload.item.item
+			}).then(function (response) {
 
-				axios.post('/thirdlaravel/thirdlaravel/public/api/shoppingListItems', {
-					type: payload.item.type,
-					item: payload.item.item
-				}).then(function (response) {
-
-					context.commit('addItem', payload);
-
-					resolve();
-				});
+				context.commit('addItem', payload);
 			});
 		},
 
 		removeItemAction: function removeItemAction(context, payload) {
 
-			return new Promise(function (resolve) {
+			axios.delete('/thirdlaravel/thirdlaravel/public/api/shoppingListItems/' + payload.item.id).then(function (response) {
 
-				axios.delete('/thirdlaravel/thirdlaravel/public/api/shoppingListItems/' + payload.item.id).then(function (response) {
-
-					context.commit('removeItem', payload);
-
-					resolve();
-				});
+				context.commit('removeItem', payload);
 			});
 		}
 	}
